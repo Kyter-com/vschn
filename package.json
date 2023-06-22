@@ -14,8 +14,8 @@
   "contributes": {
     "commands": [
       {
-        "command": "vschn.helloWorld",
-        "title": "Hello World"
+        "command": "vschn.start",
+        "title": "vschn: Start"
       }
     ]
   },
