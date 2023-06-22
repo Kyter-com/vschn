@@ -13,6 +13,15 @@ export function activate(context: vscode.ExtensionContext) {
 
       // Get the top 500 top story id's from the api
       const topFiveHundredStoryIds = await api.getTopFiveHundredStoryIds();
+      if (!topFiveHundredStoryIds) {
+        // TODO: Send a VSCode error popup
+        return;
+      }
+
+      // Filter it down to the top 30 (default displayed on the site)
+      const topThirtyStories = topFiveHundredStoryIds.slice(0, 30);
+      // TODO: Add loading spinner
+      const stories = await api.getStoriesByIds(topThirtyStories);
     }
   );
 
