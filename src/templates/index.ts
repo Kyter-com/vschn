@@ -1,7 +1,10 @@
 import htmlTemplate from "./html";
 
-const templates = {
-  html: htmlTemplate,
+// TODO: Add types
+const templateByLanguage = (language: string, stories: any) => {
+  if (language === "HTML") {
+    return htmlTemplate(stories);
+  }
 };
 
-export default templates;
+export default templateByLanguage;
