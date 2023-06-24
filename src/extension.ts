@@ -27,10 +27,36 @@ export function activate(context: vscode.ExtensionContext) {
       const topThirtyStories = topFiveHundredStoryIds.slice(0, 30);
       // TODO: Add loading spinner
       const stories = await api.getStoriesByIds(topThirtyStories);
-      console.log("stories", stories);
 
       const templatedStories = templateByLanguage(language, stories);
-      console.log("templatedStories", templatedStories);
+      if (!templatedStories) {
+        // TODO: Send a VSCode error popup
+        return;
+      }
+
+      const myScheme = "vschn";
+      const myProvider = new (class
+        implements vscode.TextDocumentContentProvider
+      {
+        onDidChangeEmitter = new vscode.EventEmitter<vscode.Uri>();
+        onDidChange = this.onDidChangeEmitter.event;
+
+        provideTextDocumentContent(uri: vscode.Uri): string {
+          return templatedStories;
+        }
+      })();
+      context.subscriptions.push(
+        vscode.workspace.registerTextDocumentContentProvider(
+          myScheme,
+          myProvider
+        )
+      );
+
+      const uri = vscode.Uri.parse(
+        "vschn:" + `vschn.${language.toLowerCase()}`
+      );
+      const doc = await vscode.workspace.openTextDocument(uri); // calls back into the provider
+      await vscode.window.showTextDocument(doc, { preview: false });
     }
   );
 
