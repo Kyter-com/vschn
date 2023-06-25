@@ -1,5 +1,6 @@
-// TODO: Fill in types
-const htmlTemplate = (stories: any) => {
+import type { Story } from "../types";
+
+const htmlTemplate = (stories: Story[]) => {
   let result = `<html lang="en" op="news">
   <head>
     <meta name="referrer" content="origin">

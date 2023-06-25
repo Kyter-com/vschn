@@ -1,4 +1,7 @@
+import * as vscode from "vscode";
 import axios from "axios";
+
+import type { Story } from "./types";
 
 const getTopFiveHundredStoryIds = async () => {
   const req = await axios
@@ -7,6 +10,7 @@ const getTopFiveHundredStoryIds = async () => {
     )
     .then((res) => res.data)
     .catch((error) => {
+      vscode.window.showErrorMessage("Error during request to HN API");
       console.error(error);
       return null;
     });
@@ -14,12 +18,12 @@ const getTopFiveHundredStoryIds = async () => {
   return req;
 };
 
-// TODO: Add types for what a story looks like
-const getStoryById = async (id: number) => {
+const getStoryById = async (id: number): Promise<Story | null> => {
   const req = await axios
     .get(`https://hacker-news.firebaseio.com/v0/item/${id}.json?print=pretty`)
     .then((res) => res.data)
     .catch((error) => {
+      vscode.window.showErrorMessage("Error during request to HN API");
       console.error(error);
       return null;
     });

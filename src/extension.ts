@@ -2,6 +2,8 @@ import * as vscode from "vscode";
 import api from "./api";
 import templateByLanguage from "./templates";
 
+import type { Story } from "./types";
+
 export function activate(context: vscode.ExtensionContext) {
   let startCommand = vscode.commands.registerCommand(
     "vschn.start",
@@ -12,25 +14,24 @@ export function activate(context: vscode.ExtensionContext) {
         placeHolder: "Select a language",
       });
       if (!language) {
-        // TODO: Send a VSCode error popup
         return;
       }
 
       // Get the top 500 top story id's from the api
       const topFiveHundredStoryIds = await api.getTopFiveHundredStoryIds();
       if (!topFiveHundredStoryIds) {
-        // TODO: Send a VSCode error popup
         return;
       }
 
       // Filter it down to the top 30 (default displayed on the site)
       const topThirtyStories = topFiveHundredStoryIds.slice(0, 30);
       // TODO: Add loading spinner
-      const stories = await api.getStoriesByIds(topThirtyStories);
+      const stories = (await api.getStoriesByIds(topThirtyStories)).filter(
+        (story) => story?.id
+      ) as Story[];
 
       const templatedStories = templateByLanguage(language, stories);
       if (!templatedStories) {
-        // TODO: Send a VSCode error popup
         return;
       }
 

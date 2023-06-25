@@ -1,7 +1,8 @@
 import htmlTemplate from "./html";
 
-// TODO: Add types
-const templateByLanguage = (language: string, stories: any) => {
+import type { Story } from "../types";
+
+const templateByLanguage = (language: string, stories: Story[]) => {
   if (language === "HTML") {
     return htmlTemplate(stories);
   }
