@@ -11,20 +11,21 @@ const htmlTemplate = (stories: Story[]) => {
     <title>Hacker News</title>
   </head>
   <body>
-    <center>
 `;
 
   for (let i = 0; i < stories.length; i += 1) {
-    const story = `      <span class="titleline">
-        <a href="${stories[i].url}" rel="noreferrer">
-          ${stories[i].title}
-        </a>
-      </span>\n`;
+    const story = `    <span class="titleline">
+      <a href="${stories[i].url}" rel="noreferrer">
+        ${stories[i].title}
+      </a>
+      <a href="https://news.ycombinator.com/item?id=${stories[i].id}">${
+      stories[i].descendants || 0
+    } comments</a>
+    </span>\n\n`;
     result += story;
   }
 
-  result += `    </center>
-  </body>
+  result += `  </body>
 </html>`;
 
   return result;
