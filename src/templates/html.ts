@@ -18,9 +18,14 @@ const htmlTemplate = (stories: Story[]) => {
       <a href="${stories[i].url}" rel="noreferrer">
         ${stories[i].title}
       </a>
-      <a href="https://news.ycombinator.com/item?id=${stories[i].id}">${
-      stories[i].descendants || 0
-    } comments</a>
+      <a href="https://news.ycombinator.com/item?id=${stories[i].id}">
+        ${stories[i].descendants || 0} comments
+      </a>
+      <a href="https://news.ycombinator.com/user?id=${
+        stories[i].by
+      }" class="hnuser">
+        By ${stories[i].by}
+      </a>
     </span>\n\n`;
     result += story;
   }

@@ -1,6 +1,5 @@
 import type { Story } from "../types";
 // TODO: Use more properties like time, score, author, etc
-// TODO: Use tsdoc for descriptions
 const typeScriptTemplate = (stories: Story[]) => {
   let result = `type Story = {
   by?: string;
@@ -27,6 +26,7 @@ stories.push(
     url: "${stories[i].url}",
     descendants: ${stories[i].descendants || 0}, // # of comments
     linkToStory: "https://news.ycombinator.com/item?id=${stories[i].id}",
+    author: "${stories[i].by}",
   },\n`;
     result += story;
   }
