@@ -1,3 +1,5 @@
+![vschn](https://github.com/Kyter-com/vschn/assets/38516489/6c7de871-37db-4ba4-9199-9bdff3d3d2a1)
+
 # vschn README
 
 // TODO: Better readme
