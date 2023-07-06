@@ -7,7 +7,7 @@
     "type": "git",
     "url": "https://github.com/Kyter-com/vschn"
   },
-  "icon": "https://raw.githubusercontent.com/Kyter-com/vschn/main/public/icon.png",
+  "icon": "public/icon.png",
   "engines": {
     "vscode": "^1.79.0"
   },
