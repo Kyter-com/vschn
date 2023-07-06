@@ -3,6 +3,10 @@
   "displayName": "vschn",
   "description": "YCombinator HackerNews reader for VSCode.",
   "version": "0.0.1",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Kyter-com/vschn"
+  },
   "icon": "https://raw.githubusercontent.com/Kyter-com/vschn/main/public/icon.png",
   "engines": {
     "vscode": "^1.79.0"
