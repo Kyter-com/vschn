@@ -64,3 +64,5 @@ export function activate(context: vscode.ExtensionContext) {
 }
 
 export function deactivate() {}
+
+// TODO: Use https://www.npmjs.com/package/request-light

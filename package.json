@@ -2,7 +2,8 @@
   "name": "vschn",
   "displayName": "vschn",
   "description": "YCombinator HackerNews reader for VSCode.",
-  "version": "0.0.1",
+  "version": "0.0.2",
+  "publisher": "Kyter",
   "repository": {
     "type": "git",
     "url": "https://github.com/Kyter-com/vschn"
