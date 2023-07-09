@@ -8,4 +8,4 @@ Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how 
 
 - Initial release
 
-TODO: Verify publisher domain
+TODO: Verify publisher domain https://code.visualstudio.com/api/working-with-extensions/publishing-extension#verify-a-publisher
