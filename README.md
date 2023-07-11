@@ -27,5 +27,3 @@ These are WIP.
 - No way to read comments at this time.
 - Limited to 30 stories at this time.
 - Not a lot of settings, or methods of using this extension other than command palette at this time.
-
-TODO: Add usage screenshots
