@@ -1,5 +1,5 @@
 import type { Story } from "../types";
-// TODO: Use more properties like time, score, author, etc
+
 const typeScriptTemplate = (stories: Story[]) => {
   let result = `type Story = {
   by?: string;
