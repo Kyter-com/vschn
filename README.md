@@ -10,6 +10,12 @@ It does so by templating out the stories into various coding languages.
 - Open the command palette (`Ctrl+Shift+P` or `Cmd+Shift+P`)
 - Type `vschn` and select `vschn: Start`
 
+**Settings**
+
+If you want to skip the question of which language to use,
+search in the settings tab for `vschn` and set `defaultLanguage`
+or add `"vschn.defaultLanguage": "..."` to `settings.json`.
+
 ## Template Languages (so far) 🧙‍♂️
 
 - `HTML`
@@ -27,3 +33,5 @@ These are WIP.
 - No way to read comments at this time.
 - Limited to 30 stories at this time.
 - Not a lot of settings, or methods of using this extension other than command palette at this time.
+
+TODO: Setup '~/' import aliases
