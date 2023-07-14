@@ -1,6 +1,7 @@
 import * as vscode from "vscode";
 import api from "./api";
 import { templateByLanguage, getFileExtensionFromLanguage } from "./templates";
+import getLanguageQuickPick from "./utils/getLanguageQuickPick";
 
 import type { Story } from "./types";
 
@@ -8,11 +9,12 @@ export function activate(context: vscode.ExtensionContext) {
   let startCommand = vscode.commands.registerCommand(
     "vschn.start",
     async () => {
-      // Ask the user which coding language they want to view the results in
-      let language = await vscode.window.showQuickPick(["HTML", "TypeScript"], {
-        title: "Select a language",
-        placeHolder: "Select a language",
-      });
+      // Determine the language to use for the template
+      // Either use the default language from settings.json or ask via quick pick
+      let defaultLanguage = vscode.workspace
+        .getConfiguration("vschn")
+        ?.get("defaultLanguage") as string;
+      let language = defaultLanguage || (await getLanguageQuickPick());
       if (!language) {
         return;
       }
@@ -41,7 +43,7 @@ export function activate(context: vscode.ExtensionContext) {
         onDidChangeEmitter = new vscode.EventEmitter<vscode.Uri>();
         onDidChange = this.onDidChangeEmitter.event;
 
-        provideTextDocumentContent(uri: vscode.Uri): string {
+        provideTextDocumentContent(): string {
           return templatedStories;
         }
       })();

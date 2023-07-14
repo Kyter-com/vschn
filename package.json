@@ -2,7 +2,7 @@
   "name": "vschn",
   "displayName": "vschn",
   "description": "YCombinator HackerNews reader for VSCode.",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "publisher": "Kyter",
   "repository": {
     "type": "git",
@@ -23,7 +23,20 @@
         "command": "vschn.start",
         "title": "vschn: Start"
       }
-    ]
+    ],
+    "configuration": {
+      "title": "vschn",
+      "properties": {
+        "vschn.defaultLanguage": {
+          "type": "string",
+          "enum": [
+            "HTML",
+            "TypeScript"
+          ],
+          "description": "Select the default language to skip the question on each startup."
+        }
+      }
+    }
   },
   "scripts": {
     "vscode:prepublish": "npm run compile",
