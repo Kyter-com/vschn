@@ -4,6 +4,11 @@ All notable changes to the "vschn" extension will be documented in this file.
 
 Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how to structure this file.
 
+## [0.0.9]
+
+- Dependency updates (@NickReisenauer)
+- Basic Markdown template (@NickReisenauer)
+
 ## [0.0.8]
 
 - Trying to fix failing deployment on Microsoft Marketplace (@NickReisenauer)
