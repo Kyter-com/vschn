@@ -2,7 +2,7 @@
   "name": "vschn",
   "displayName": "vschn",
   "description": "YCombinator HackerNews reader for VSCode.",
-  "version": "0.0.11",
+  "version": "0.0.12",
   "publisher": "Kyter",
   "repository": {
     "type": "git",
@@ -43,23 +43,19 @@
     "vscode:prepublish": "npm run compile",
     "compile": "tsc -p ./",
     "watch": "tsc -watch -p ./",
-    "pretest": "npm run compile && npm run lint",
-    "lint": "eslint src --ext ts",
-    "test": "node ./out/test/runTest.js"
+    "lint": "eslint src --ext ts"
   },
   "devDependencies": {
     "@types/glob": "^8.1.0",
-    "@types/mocha": "^10.0.4",
-    "@types/node": "20.9.2",
-    "@types/vscode": "^1.82.0",
+    "@types/node": "20.10.4",
+    "@types/vscode": "^1.85.0",
     "@typescript-eslint/eslint-plugin": "^6.12.0",
     "@typescript-eslint/parser": "^6.12.0",
-    "eslint": "^8.50.0",
+    "eslint": "^8.55.0",
     "glob": "^10.3.10",
-    "mocha": "^10.2.0",
-    "typescript": "^5.2.2"
+    "typescript": "^5.3.3"
   },
   "dependencies": {
-    "axios": "^1.5.0"
+    "axios": "^1.6.2"
   }
 }
