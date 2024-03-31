@@ -4,6 +4,10 @@ All notable changes to the "vschn" extension will be documented in this file.
 
 Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how to structure this file.
 
+## [0.0.14] 3/30/2024
+
+- Dependency updates (@NickReisenauer)
+
 ## [0.0.13] 2/28/2024
 
 - Dependency updates (@NickReisenauer)

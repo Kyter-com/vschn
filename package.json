@@ -2,7 +2,7 @@
   "name": "vschn",
   "displayName": "vschn",
   "description": "YCombinator HackerNews reader for VSCode.",
-  "version": "0.0.12",
+  "version": "0.0.14",
   "publisher": "Kyter",
   "repository": {
     "type": "git",
@@ -10,7 +10,7 @@
   },
   "icon": "public/icon.png",
   "engines": {
-    "vscode": "^1.85.0"
+    "vscode": "^1.87.0"
   },
   "categories": [
     "Other"
